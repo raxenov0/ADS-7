@@ -83,5 +83,5 @@ class TPQueue {
         current = (*current).next;
       }
     }
-}
+};
 #endif  // INCLUDE_TPQUEUE_H_
