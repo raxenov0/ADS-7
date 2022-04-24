@@ -28,13 +28,11 @@ class TPQueue {
             current = current->next;
        if (current == nullptr && first == nullptr) {
             first = last = item_;
-        } else 
-            if (current == nullptr && first) {
+        } else if (current == nullptr && first) {
             last->next = item_;
             item_->last = last;
             last = item_;
-        } else 
-            if (current->last == nullptr) {
+        } else if (current->last == nullptr) {
               first->last = item_;
               item_->next = first;
               first = item_;
@@ -50,8 +48,7 @@ class TPQueue {
         if (first->next == nullptr) first = nullptr;
         else {
             first = first->next;
-            first->last = nullptr;
-        }
+            first->last = nullptr;}
         T value_ = current->value;
         delete current;
         return value_;
