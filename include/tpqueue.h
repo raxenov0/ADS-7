@@ -3,14 +3,14 @@
 #define INCLUDE_TPQUEUE_H_
 #include <iostream>
 
-template <typename T>
+template<typename T>
 class TPQueue {
  private:
-   struct ITEM {
-    T value;
-    ITEM* next;
-    ITEM* last;
-   };
+    struct ITEM {
+      T value;
+      ITEM* next;
+      ITEM* last;
+    };
   ITEM* first, *last;
  public:
   TPQueue() {
@@ -84,4 +84,5 @@ struct SYM {
   char ch;
   int prior;
 };
+ 
 #endif  // INCLUDE_TPQUEUE_H_
