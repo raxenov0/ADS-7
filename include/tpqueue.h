@@ -6,12 +6,12 @@
 template <typename T>
 class TPQueue {
  private:
- struct ITEM {
-   T value;
-   ITEM* next;
-   ITEM* last;
-  };
- ITEM* first, *last;
+   struct ITEM {
+    T value;
+    ITEM* next;
+    ITEM* last;
+   };
+  ITEM* first, *last;
  public:
   TPQueue() {
     first = nullptr;
@@ -79,7 +79,7 @@ class TPQueue {
     }
   }
 };
-  
+
 struct SYM {
   char ch;
   int prior;
