@@ -12,6 +12,7 @@ class TPQueue {
       ITEM* last;
     };
   ITEM* first, *last;
+
  public:
   TPQueue() {
     first = nullptr;
