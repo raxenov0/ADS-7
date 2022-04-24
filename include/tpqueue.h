@@ -18,7 +18,13 @@ class TPQueue {
     TPQueue() {
         first = last = nullptr;
     }
-
+    ~TPQueue(){
+     while(first){
+       ITEM* current = first;
+       first = first->next;
+       delete current;
+       }
+    }
     void push(T element) {
         ITEM* item_ = new ITEM;
         item_->value = element;
