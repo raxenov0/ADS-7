@@ -6,26 +6,27 @@
 template<typename T>
 class TPQueue {
  private:
-	struct ITEM {
-    T value;
+  struct ITEM {
+    value;
     ITEM* next;
     ITEM* last;
-  };
+};
   ITEM* first, *last;
-public:
-	TPQueue() {
-		first = nullptr;
-		last = nullptr;
-	};
+ public:
   TPQueue() {
-    while( first ){
+    first = nullptr;
+    last = nullptr;
+  };
+  TPQueue() {
+    while ( first ){
       ITEM* current = first;
       first = (*first).next;
       delete current;
     }
     bool isEmpty() {
       if (first == nullptr) return true;
-      else return false;
+      else
+        return false;
     }
     void push(T element) {
       ITEM* elem = new ITEM;
@@ -50,7 +51,7 @@ public:
               (*current).next = elem;
               (*elem).last = current;
               current = (*(*current).next).next;
-					}					
+            }					
             (*elem).next = current;
             (*current).last = elem;
             return;
@@ -72,14 +73,12 @@ public:
     }
     void print() {
       ITEM* current = first;
-      int i = 0;
       while (current) {
-        i++;
-        std::cout << (*current).value.ch << ' ' << (*current).last <<' ' << current <<" "<< (*current).next << std::endl;
+        std::cout << (*current).value.ch << std::endl;
         current = (*current).next;
       }
     }
-};
+}
   
 struct SYM {
   char ch;
