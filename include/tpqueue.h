@@ -19,7 +19,7 @@ class TPQueue {
         first = last = nullptr;
     }
     ~TPQueue() {
-       while(first){
+       while (first) {
           ITEM* current = first;
           first = first->next;
           delete current;
