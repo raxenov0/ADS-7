@@ -47,7 +47,6 @@ class TPQueue {
             first = elem;
           }
           if ((*current).last != nullptr) {
-            std::cout << (*elem).value.ch << (*current).value.ch<< std::endl;
             (*elem).next = current;
             current = (*current).last;
             (*current).next = elem;
