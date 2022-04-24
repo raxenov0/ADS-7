@@ -10,15 +10,15 @@ class TPQueue {
     value;
     ITEM* next;
     ITEM* last;
-};
+  };
   ITEM* first, *last;
  public:
   TPQueue() {
     first = nullptr;
     last = nullptr;
-  };
+  }
   TPQueue() {
-    while ( first ){
+    while ( first ) {
       ITEM* current = first;
       first = (*first).next;
       delete current;
@@ -51,7 +51,7 @@ class TPQueue {
               (*current).next = elem;
               (*elem).last = current;
               current = (*(*current).next).next;
-            }					
+            }
             (*elem).next = current;
             (*current).last = elem;
             return;
@@ -78,8 +78,8 @@ class TPQueue {
         current = (*current).next;
       }
     }
-}
-  
+};
+
 struct SYM {
   char ch;
   int prior;
