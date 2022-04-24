@@ -5,7 +5,7 @@
 
 template <typename T>
 class TPQueue {
-private:
+ private:
     struct ITEM {
         T value;
         ITEM* next;
@@ -14,7 +14,7 @@ private:
     ITEM* last;
     ITEM* first;
 
-public:
+ public:
     TPQueue() {
         first = last = nullptr;
     }
@@ -24,19 +24,20 @@ public:
         item_->value = element;
         item_->next = item_->last = nullptr;
         ITEM* current = first;
-        while (current && current->value.prior >= item_->value.prior) current = current->next;
-        
+        while (current && current->value.prior >= item_->value.prior)
+            current = current->next;
        if (current == nullptr && first == nullptr) {
             first = last = item_;
-        }
-        else if (current == nullptr && first) {
+        } else 
+            if (current == nullptr && first) {
             last->next = item_;
             item_->last = last;
             last = item_;
-        } else if (current->last == nullptr) {
-            first->last = item_;
-            item_->next = first;
-            first = item_;
+        } else 
+            if (current->last == nullptr) {
+              first->last = item_;
+              item_->next = first;
+              first = item_;
         } else {
             current->last->next = item_;
             item_->last = current->last;
