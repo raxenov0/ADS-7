@@ -78,7 +78,7 @@ class TPQueue {
         current = (*current).next;
       }
     }
-};
+}
 
 struct SYM {
   char ch;
