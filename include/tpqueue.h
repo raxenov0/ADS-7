@@ -17,7 +17,7 @@ class TPQueue {
     first = nullptr;
     last = nullptr;
   }
-  TPQueue() {
+  ~TPQueue() {
     while ( first ) {
       ITEM* current = first;
       first = (*first).next;
