@@ -21,7 +21,7 @@ class TPQueue {
   ~TPQueue() {
      while (first) {
       ITEM* current = first;
-      first = (*first).next;
+      first = first->next;
       delete current;
       }
   }
@@ -32,44 +32,44 @@ class TPQueue {
   }
   void push(T element) {
     ITEM* elem = new ITEM;
-    (*elem).value = element;
-    (*elem).next = nullptr;
+    elem->value = element;
+    elem->next = nullptr;
     if (isEmpty()) {
       first = last = elem;
-      (*first).next = nullptr;
-      (*first).last = nullptr;
+      first->next = nullptr;
+      first->last = nullptr;
     } else {
       ITEM* current = first;
       while (current != nullptr) {
-        if ((*current).value.prior < (*elem).value.prior) {
+        if (current->value.prior < elem->value.prior) {
           if (current == first) {
-            (*elem).last = nullptr;
+            elem->last = nullptr;
             first = elem;
           }
-          if ((*current).last != nullptr) {
-            (*elem).next = current;
-            current = (*current).last;
-            (*current).next = elem;
-            (*elem).last = current;
-            current = (*(*current).next).next;
+          if (current->last != nullptr) {
+            elem->next = current;
+            current = current->last;
+            current->next = elem;
+            elem->last = current;
+            current = current->next->next;
           }
-          (*elem).next = current;
-          (*current).last = elem;
+          elem->next = current;
+          current->last = elem;
           return;
         }
-        current = (*current).next;
+        current = current->next;
       }
-      (*last).next = elem;
-      (*elem).next = nullptr;
-      (*elem).last = last;
+      last->next = elem;
+      elem->next = nullptr;
+      elem->last = last;
       last = elem;
     }
     return;
   }
   T pop() {
     ITEM* current = first;
-    first = (*first).next;
-    T val = (*current).value;
+    first = first->next;
+    T val = current->value;
     delete current;
     return val;
   }
