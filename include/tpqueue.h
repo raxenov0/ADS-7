@@ -19,9 +19,10 @@ class TPQueue {
   }
   ~TPQueue() {
     while ( first ) {
-    ITEM* current = first;
-    first = (*first).next;
-    delete current;
+      ITEM* current = first;
+      first = (*first).next;
+      delete current;
+    }
   }
   bool isEmpty() {
   if (first == nullptr) return true;
@@ -78,11 +79,11 @@ class TPQueue {
       current = (*current).next;
     }
   }
-};
+}
 
 struct SYM {
   char ch;
   int prior;
 };
- 
+
 #endif  // INCLUDE_TPQUEUE_H_
