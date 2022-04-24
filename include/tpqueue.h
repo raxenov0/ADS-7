@@ -18,6 +18,13 @@ class TPQueue {
     first = nullptr;
     last = nullptr;
   }
+  ~TPQueue() {
+     while (first) {
+      ITEM* current = first;
+      first = (*first).next;
+      delete current;
+      }
+  }
   bool isEmpty() {
   if (first == nullptr) return true;
   else
@@ -57,6 +64,7 @@ class TPQueue {
       (*elem).last = last;
       last = elem;
     }
+   return;
   }
   T pop() {
     ITEM* current = first;
@@ -64,13 +72,6 @@ class TPQueue {
     T val = (*current).value;
     delete current;
     return val;
-  }
-  void print() {
-    ITEM* current = first;
-    while (current) {
-      std::cout << (*current).value.ch << std::endl;
-      current = (*current).next;
-    }
   }
 };
 
