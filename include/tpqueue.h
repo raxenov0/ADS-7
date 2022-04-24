@@ -46,7 +46,7 @@ class TPQueue {
     T pop() {
         ITEM* current = first;
         if (first->next == nullptr) first = nullptr;
-        else 
+        else
             {first = first->next;
             first->last = nullptr;}
         T value_ = current->value;
