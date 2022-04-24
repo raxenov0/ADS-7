@@ -8,7 +8,7 @@ struct SYM {
   int prior;
 };
 
-template<typename T>
+template <typename T>
 class TPQueue {
  private:
   struct ITEM {
