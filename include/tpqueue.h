@@ -18,11 +18,11 @@ class TPQueue {
     last = nullptr;
   }
   ~TPQueue() {
-   while ( first ) {
-    ITEM* current = first;
-    first = (*first).next;
-    delete current;
-   }
+     while ( first ) {
+     ITEM* current = first;
+     first = (*first).next;
+     delete current;
+  }
     bool isEmpty() {
       if (first == nullptr) return true;
       else
