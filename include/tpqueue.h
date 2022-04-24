@@ -64,7 +64,7 @@ class TPQueue {
       last = elem;
     }
   }
-  T& pop() {
+  T pop() {
     ITEM* current = first;
     first = (*first).next;
     T val = (*current).value;
